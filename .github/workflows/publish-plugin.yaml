@@ -1,11 +1,10 @@
-name: CI
+
+name: Create release
 
 on:
-  push:
-
-# Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
+  release:
+    types:
+      - created
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -36,13 +35,14 @@ jobs:
       id: build
       run: cd sap-alm-dp-api-datasource && yarn build
 
+    - name: Archive build artifacts
+      if: ${{ steps.release.outputs.release_created }}
+      run: zip -r sap-alm-dp-api-datasource.zip dist/
 
-#    - name: Start grafana docker
-#      run: cd sap-alm-dp-api-datasource && yarn server -d
-#
-#    - name: Run e2e tests
-#      run: cd sap-alm-dp-api-datasource && yarn e2e
-#
-#    - name: Stop grafana docker
-#      run: docker-compose down
+    - name: Upload release artifact
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release upload ${{ steps.release.outputs.tag_name }} sap-alm-dp-api-datasource.zip 
+
 

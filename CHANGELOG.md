@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+## [1.1.1](https://github.com/Yasmine92/alm-plug-in-for-grafana/compare/v1.1.0...v1.1.1) (2024-05-21)
+
+
+### Bug Fixes
+
+* pipeline target ([bafd799](https://github.com/Yasmine92/alm-plug-in-for-grafana/commit/bafd799f90bd7a2e34637fe80ff91ce151eebf25))
+
 ## [1.1.0](https://github.com/Yasmine92/alm-plug-in-for-grafana/compare/v1.0.0...v1.1.0) (2024-05-16)
 
 

@@ -37,7 +37,6 @@ If you want to learn more about SAP Cloud ALM API, see the following:
 - [SAP Cloud ALM API HUB](https://api.sap.com/package/SAPCloudALM?section=Artifacts)
 
 
-
 ## How to obtain support
 [Create an issue](https://github.com/SAP/alm-plug-in-for-grafana/issues) in this repository if you find a bug or have questions about the content.
 
